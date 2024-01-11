@@ -1,6 +1,7 @@
 import { IHeaderMenuItem } from "@/app/models/general";
 import Link from "next/link";
 import Logo from "../UI/Logo";
+import Buttons from "./buttons";
 
 export default function MainHeader() {
   const listItems: IHeaderMenuItem[] = [
@@ -21,7 +22,7 @@ export default function MainHeader() {
     },
   ];
   return (
-    <div className="flex w-full px-4 pt-6 border-b border-border-brown text-text-primary">
+    <div className="flex items-center w-full px-4 pt-6 border-b border-border-brown text-text-primary">
       <Link href="/">
         <Logo />
       </Link>
@@ -38,6 +39,7 @@ export default function MainHeader() {
           </li>
         ))}
       </ul>
+      <Buttons />
     </div>
   );
 }
