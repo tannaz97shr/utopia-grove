@@ -18,7 +18,7 @@ export default function Button({
       className={`px-4 py-2 h-fit rounded-md ${
         variant !== "secondary"
           ? "border border-border-brown bg-custom-orange"
-          : "border border-custom-orange text-custom-orange font-semibold"
+          : "border border-border-brown text-border-brown font-semibold"
       } ${className}`}
       onClick={onClick}
     >
