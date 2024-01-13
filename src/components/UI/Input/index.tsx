@@ -18,16 +18,24 @@ export default function Input({
   checked,
 }: InputProps) {
   return (
-    <label className="flex flex-col">
-      {label}
-      <input
-        className={`w-72 rounded bg-bg-primary mt-2 p-1 focus-visible:outline-0 ${className}`}
-        type={type}
-        name={name}
-        onChange={onChange && onChange}
-        value={value && value}
-        checked={checked && checked}
-      />
+    <label className="flex flex-col mt-4">
+      {label} :
+      {type !== "textarea" ? (
+        <input
+          className={`w-72 rounded bg-bg-primary mt-2 p-1 focus-visible:outline-0 ${className}`}
+          name={name}
+          onChange={onChange && onChange}
+          value={value && value}
+          type={type}
+          checked={checked && checked}
+        />
+      ) : (
+        <textarea
+          className={`w-72 rounded bg-bg-primary mt-2 p-1 focus-visible:outline-0 ${className}`}
+          name={name}
+          value={value && value}
+        />
+      )}
     </label>
   );
 }
