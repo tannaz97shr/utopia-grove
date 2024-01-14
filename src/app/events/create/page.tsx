@@ -1,13 +1,23 @@
 import FormExtraInfo from "@/components/FormExtraInfo";
+import Button from "@/components/UI/Button";
 import DateAndTimePicker from "@/components/UI/DateAndTimePicker";
 import Input from "@/components/UI/Input";
 
 export default function Create() {
+  const submitEvent = async (formData: FormData) => {
+    "use server";
+    const event = {
+      title: formData.get("title"),
+    };
+  };
   return (
     <>
       <h1 className="text-3xl mt-6 mx-auto">Submit Your Event</h1>
       <div className="w-full lg:w-3/4 mx-auto bg-bg-secndary p-2 mt-6">
-        <form className="border border-border-brown p-4">
+        <form
+          className="flex flex-col border border-border-brown p-4"
+          action={submitEvent}
+        >
           <FormExtraInfo info="Allow at least 48 hours for events to be approved by a team member. Check to see if your event is already posted on the events calendar before submitting this form. There is a chance a team member may have posted it. Do not use all caps.">
             <Input name="title" type="text" label="Title" />
             <DateAndTimePicker
@@ -35,6 +45,9 @@ export default function Create() {
             <Input name="link" type="text" label="Event Website Link" />
           </FormExtraInfo>
           <Input name="image" type="text" label="Event Image Link" />
+          <Button variant="primary" submit>
+            Submit Event
+          </Button>
         </form>
       </div>
     </>
