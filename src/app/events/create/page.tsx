@@ -1,4 +1,5 @@
 import FormExtraInfo from "@/components/FormExtraInfo";
+import ImagePicker from "@/components/ImagePicker";
 import Button from "@/components/UI/Button";
 import DateAndTimePicker from "@/components/UI/DateAndTimePicker";
 import Input from "@/components/UI/Input";
@@ -55,7 +56,8 @@ export default function Create() {
           <FormExtraInfo info="This is the page where people should go to find out more information about your event, RSVP, or buy a ticket (if applicable). If you don't have a page setup for the event, it's best to leave this field blank.">
             <Input name="link" type="text" label="Event Website Link" />
           </FormExtraInfo>
-          <Input name="image" type="text" label="Event Image Link" />
+          {/* <Input name="image" type="text" label="Event Image Link" /> */}
+          <ImagePicker name="image" label="Event Image :" />
           <Button variant="primary" submit>
             Submit Event
           </Button>
