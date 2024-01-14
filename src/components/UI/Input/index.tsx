@@ -6,6 +6,7 @@ interface InputProps {
   value?: any;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   checked?: boolean;
+  required?: boolean;
 }
 
 export default function Input({
@@ -16,6 +17,7 @@ export default function Input({
   value,
   onChange,
   checked,
+  required,
 }: InputProps) {
   return (
     <label className="flex flex-col mt-4">
@@ -28,12 +30,14 @@ export default function Input({
           value={value && value}
           type={type}
           checked={checked && checked}
+          required={required}
         />
       ) : (
         <textarea
           className={`w-72 rounded bg-bg-primary mt-2 p-1 focus-visible:outline-0 ${className}`}
           name={name}
           value={value && value}
+          required={required}
         />
       )}
     </label>

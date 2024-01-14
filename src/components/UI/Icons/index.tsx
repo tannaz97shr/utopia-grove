@@ -4,8 +4,8 @@ export type IconProps = SVGProps<SVGSVGElement>;
 
 export const IconFavorite = (props: IconProps) => (
   <svg
-    width="32"
-    height="32"
+    width="25"
+    height="25"
     viewBox="0 0 47.94 47.94"
     xmlns="http://www.w3.org/2000/svg"
     fill="#ED8A19"

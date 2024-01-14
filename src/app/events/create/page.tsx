@@ -27,16 +27,18 @@ export default function Create() {
           action={submitEvent}
         >
           <FormExtraInfo info="Allow at least 48 hours for events to be approved by a team member. Check to see if your event is already posted on the events calendar before submitting this form. There is a chance a team member may have posted it. Do not use all caps.">
-            <Input name="title" type="text" label="Title" />
+            <Input required name="title" type="text" label="Title" />
             <DateAndTimePicker
               dateName="startDate"
               timeName="startTime"
               label="Start Date"
+              required
             />
             <DateAndTimePicker
               dateName="endDate"
               timeName="endTime"
               label="End Date"
+              required
             />
           </FormExtraInfo>
           <FormExtraInfo info="Tell visitors all about your event!">
@@ -44,10 +46,11 @@ export default function Create() {
               name="description"
               type="textarea"
               label="Event Description"
+              required
             />
           </FormExtraInfo>
           <FormExtraInfo info="Type the name of a business, name of a popular venue, or just use a street address where the event will take place">
-            <Input name="address" type="text" label="Event Address" />
+            <Input required name="address" type="text" label="Event Address" />
           </FormExtraInfo>
           <FormExtraInfo info="This is the page where people should go to find out more information about your event, RSVP, or buy a ticket (if applicable). If you don't have a page setup for the event, it's best to leave this field blank.">
             <Input name="link" type="text" label="Event Website Link" />
