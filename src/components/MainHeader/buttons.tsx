@@ -5,9 +5,8 @@ import { IconFavorite } from "../UI/Icons";
 
 export default function Buttons() {
   return (
-    <>
+    <div className="mx-auto md:mr-0 md:ml-auto mt-auto md:mt-0 flex items-center">
       <Button
-        className="ml-auto"
         variant="secondary"
         onClick={() => {
           console.log("sign in/up clicked");
@@ -24,6 +23,6 @@ export default function Buttons() {
       >
         <IconFavorite />
       </Button>
-    </>
+    </div>
   );
 }
