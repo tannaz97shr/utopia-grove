@@ -3,7 +3,7 @@ import ForestIcon from "./forest.png";
 
 export default function Logo() {
   return (
-    <div className="flex items-center font-semibold text-2xl mb-6">
+    <div className="flex items-center font-semibold text-2xl mb-4">
       <Image
         src={ForestIcon}
         width={50}
