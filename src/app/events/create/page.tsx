@@ -3,22 +3,9 @@ import ImagePicker from "@/components/ImagePicker";
 import Button from "@/components/UI/Button";
 import DateAndTimePicker from "@/components/UI/DateAndTimePicker";
 import Input from "@/components/UI/Input";
+import { submitEvent } from "@/lib/actions";
 
 export default function Create() {
-  const submitEvent = async (formData: FormData) => {
-    "use server";
-    const event = {
-      title: formData.get("title"),
-      startDate: formData.get("startDate"),
-      startTime: formData.get("startTime"),
-      endDate: formData.get("endDate"),
-      endTime: formData.get("endTime"),
-      description: formData.get("description"),
-      address: formData.get("address"),
-      link: formData.get("link"),
-    };
-    console.log("event submited", event);
-  };
   return (
     <>
       <h1 className="text-3xl mt-6 mx-auto">Submit Your Event</h1>
