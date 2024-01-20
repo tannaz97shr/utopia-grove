@@ -1,5 +1,8 @@
 "use server";
 
+import { sql } from "@vercel/postgres";
+import { uploadImage } from "./images";
+
 export const submitEvent = async (formData: FormData) => {
   const event = {
     title: formData.get("title"),
@@ -10,7 +13,10 @@ export const submitEvent = async (formData: FormData) => {
     description: formData.get("description"),
     address: formData.get("address"),
     link: formData.get("link"),
-    image: formData.get("image"),
+    // image: formData.get("image"),
   };
   console.log("event submited", event);
+  const testResponse = await sql`CREATE TABLE IF NOT EXISTS test (likes INT);`;
+  const testImage = await uploadImage(formData.get("image") as File);
+  console.log("event testResponse", testImage);
 };
