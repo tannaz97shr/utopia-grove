@@ -1,6 +1,6 @@
 "use client";
 
-import { IHeaderMenuItem } from "@/app/models/general";
+import { IHeaderMenuItem } from "@/models/general";
 import Link from "next/link";
 import { useState } from "react";
 import { IconCross, IconMenu } from "../UI/Icons";
