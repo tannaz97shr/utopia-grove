@@ -4,10 +4,8 @@ import ImagePicker from "@/components/ImagePicker";
 import DateAndTimePicker from "@/components/UI/DateAndTimePicker";
 import Input from "@/components/UI/Input";
 import SubmitButton from "@/components/UI/SubmitButton";
-// import { useFormState } from "react-dom";
 
 export default function Create() {
-  // const [state, formAction] = useFormState<any>(submitEvent, { message: null });
   return (
     <>
       <h1 className="text-3xl mt-6 mx-auto">Submit Your Event</h1>
@@ -42,7 +40,6 @@ export default function Create() {
           <FormExtraInfo info="This is the page where people should go to find out more information about your event, RSVP, or buy a ticket (if applicable). If you don't have a page setup for the event, it's best to leave this field blank.">
             <Input name="link" type="text" label="Event Website Link" />
           </FormExtraInfo>
-          {/* <Input name="image" type="text" label="Event Image Link" /> */}
           <ImagePicker name="image" label="Event Image :" />
           <SubmitButton>Submit Event</SubmitButton>
         </CreateEventForm>

@@ -15,3 +15,8 @@ export interface IEvent {
   link: string;
   image: string;
 }
+
+export interface ISubmitEventResponse {
+  message?: string | null;
+  status?: 200 | 500;
+}

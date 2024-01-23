@@ -1,14 +1,14 @@
 "use server";
 
+import { ISubmitEventResponse } from "@/models/general";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { addSingleEvent, createEventsTable } from "./events";
 import { uploadImage } from "./images";
 
 export const submitEvent = async (
   _prevState: any,
   formData: FormData
-): Promise<{ message?: string | null }> => {
+): Promise<ISubmitEventResponse> => {
   const event = {
     title: formData.get("title") as string,
     startDate: `${formData.get("startDate") as string}, ${
@@ -31,11 +31,15 @@ export const submitEvent = async (
     await createEventsTable();
     await addSingleEvent({ ...event, image: storedImage.url });
     revalidatePath("/events");
-    redirect("/events");
+    return {
+      message: "insert successful",
+      status: 200,
+    };
   } catch (e) {
     console.error("insert error", e);
     return {
       message: "insert error",
+      status: 500,
     };
   }
 };
