@@ -20,3 +20,14 @@ export interface ISubmitEventResponse {
   message?: string | null;
   status?: 200 | 500;
 }
+
+export interface INotificationType {
+  status: "success" | "error" | "pending";
+  message: string;
+}
+
+export interface INotificationContext {
+  notification?: INotificationType | null;
+  showNotification: (notificationData: INotificationType) => void;
+  hideNotification: () => void;
+}

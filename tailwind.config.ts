@@ -22,6 +22,8 @@ const config: Config = {
       "text-secondary": "#a0a0a0",
       "border-brown": "#8D6E63",
       "custom-orange": "#FF6F00",
+      success: "#00cc66",
+      error: "#ff8080",
     },
   },
   plugins: [],
