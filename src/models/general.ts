@@ -5,6 +5,7 @@ export interface IHeaderMenuItem {
 }
 
 export interface IEvent {
+  id: number;
   title: string;
   startDate: string;
   // startTime: string;
