@@ -2,6 +2,7 @@ import TextCollapse from "@/components/TextCollapse";
 import Button from "@/components/UI/Button";
 import { fetchSingleEvent } from "@/lib/events";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { CiLocationOn } from "react-icons/ci";
 
 export default async function EventPage({
@@ -12,6 +13,9 @@ export default async function EventPage({
   const [event] = await fetchSingleEvent(params.slug);
   const start = new Date(event.startdate);
   const end = new Date(event.enddate);
+  if (!event) {
+    notFound();
+  }
   return (
     <>
       <h1 className="mt-6 text-xl md:text-3xl text-custom-orange font-semibold">
