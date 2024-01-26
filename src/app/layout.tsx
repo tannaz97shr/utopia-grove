@@ -1,4 +1,6 @@
 import MainHeader from "@/components/MainHeader";
+import Notification from "@/components/UI/Notification";
+import { NotificationContextProvider } from "@/store/notification-context";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -18,10 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MainHeader />
-        <div className="flex flex-col mx-4 lg:mx-auto lg:w-[1200px]">
-          {children}
-        </div>
+        <NotificationContextProvider>
+          <MainHeader />
+          <Notification />
+          <div className="flex flex-col mx-4 lg:mx-auto lg:w-[1200px]">
+            {children}
+          </div>
+        </NotificationContextProvider>
       </body>
     </html>
   );

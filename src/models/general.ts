@@ -4,14 +4,31 @@ export interface IHeaderMenuItem {
   href: string;
 }
 
-export interface IEvent {
+export interface IRawEvent {
   title: string;
   startDate: string;
-  // startTime: string;
   endDate: string;
-  // endTime: string;
   description: string;
   address: string;
   link: string;
   image: string;
+}
+export interface IEvent extends IRawEvent {
+  id: number;
+}
+
+export interface ISubmitEventResponse {
+  message?: string | null;
+  status?: 200 | 500;
+}
+
+export interface INotificationType {
+  status: "success" | "error" | "pending";
+  message: string;
+}
+
+export interface INotificationContext {
+  notification?: INotificationType | null;
+  showNotification: (notificationData: INotificationType) => void;
+  hideNotification: () => void;
 }
