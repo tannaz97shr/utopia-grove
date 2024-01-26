@@ -4,17 +4,17 @@ export interface IHeaderMenuItem {
   href: string;
 }
 
-export interface IEvent {
-  id: number;
+export interface IRawEvent {
   title: string;
-  startdate: string;
-  // startTime: string;
-  enddate: string;
-  // endTime: string;
+  startDate: string;
+  endDate: string;
   description: string;
   address: string;
   link: string;
   image: string;
+}
+export interface IEvent extends IRawEvent {
+  id: number;
 }
 
 export interface ISubmitEventResponse {

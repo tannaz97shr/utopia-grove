@@ -14,13 +14,13 @@ export default function Create() {
           <FormExtraInfo info="Allow at least 48 hours for events to be approved by a team member. Check to see if your event is already posted on the events calendar before submitting this form. There is a chance a team member may have posted it. Do not use all caps.">
             <Input required name="title" type="text" label="Title" />
             <DateAndTimePicker
-              dateName="startdate"
+              dateName="startDate"
               timeName="startTime"
               label="Start Date"
               required
             />
             <DateAndTimePicker
-              dateName="enddate"
+              dateName="endDate"
               timeName="endTime"
               label="End Date"
               required
