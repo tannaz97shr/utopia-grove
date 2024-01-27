@@ -32,3 +32,8 @@ export interface INotificationContext {
   showNotification: (notificationData: INotificationType) => void;
   hideNotification: () => void;
 }
+
+export interface ITabItem {
+  id: string;
+  title: string;
+}

@@ -1,17 +1,13 @@
 "use client";
 
+// import { redirect } from "next/navigation";
 import Button from "../UI/Button";
 import { IconFavorite } from "../UI/Icons";
 
 export default function Buttons() {
   return (
     <div className="mx-auto md:mr-0 md:ml-auto mt-auto md:mt-0 flex items-center">
-      <Button
-        variant="secondary"
-        onClick={() => {
-          console.log("sign in/up clicked");
-        }}
-      >
+      <Button variant="secondary" href="/auth">
         Login/Signup
       </Button>
       <Button
