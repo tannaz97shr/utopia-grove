@@ -34,6 +34,6 @@ export interface INotificationContext {
 }
 
 export interface ITabItem {
-  id: string;
+  id: "login" | "signup";
   title: string;
 }
