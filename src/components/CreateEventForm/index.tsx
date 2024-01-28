@@ -1,6 +1,6 @@
 "use client";
 
-import { submitEvent } from "@/lib/actions";
+import { submitEvent } from "@/lib/eventActions";
 import NotificationContext from "@/store/notification-context";
 import { redirect } from "next/navigation";
 import { useContext, useEffect } from "react";
@@ -16,7 +16,7 @@ export default function CreateEventForm({ children }: CreateEventFormProps) {
   useEffect(() => {
     if (state.status === 200) {
       notificationCtx.showNotification({
-        message: "Event successfully submited.",
+        message: state.message as string,
         status: "success",
       });
       redirect("/events");

@@ -4,21 +4,6 @@ import { ITabItem } from "@/models/general";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
-// const tabItems: ITabItem[] = [
-//   {
-//     id: "all",
-//     title: "All",
-//   },
-//   {
-//     id: "pizza",
-//     title: "Pizza Match",
-//   },
-//   {
-//     id: "steak",
-//     title: "Steak Match",
-//   },
-// ];
-
 interface TabsProps {
   items: ITabItem[];
 }
@@ -28,35 +13,33 @@ export default function Tabs({ items }: TabsProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const [currentTabId, setCurrentTabId] = useState<string>(
-    searchParams.get("tab") ? (searchParams.get("tab") as string) : "login"
-  );
+  const [currentTabId, setCurrentTabId] = useState<"login" | "signup">("login");
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams.toString());
-
-      //   if (value === "all") {
-      //     params.delete("food");
-      //   } else {
       params.set(name, value);
-      //   }
-
       return params.toString();
     },
     [searchParams]
   );
 
   useEffect(() => {
-    router.push(
-      pathname + "?" + createQueryString("tab", currentTabId.toString())
-    );
+    console.log("useeffect");
+    router.push(pathname + "?" + createQueryString("tab", currentTabId));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTabId]);
 
-  const onTabChange = (id: string) => {
+  const onTabChange = (id: "login" | "signup") => {
     setCurrentTabId(id);
   };
+
+  if (
+    ((searchParams.get("tab") !== "login") as boolean) &&
+    ((searchParams.get("tab") !== "signup") as boolean)
+  ) {
+    router.push(pathname + "?" + createQueryString("tab", "login"));
+  }
 
   return (
     <ul
