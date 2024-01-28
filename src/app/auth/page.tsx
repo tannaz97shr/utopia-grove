@@ -1,4 +1,5 @@
 import LoginForm from "@/components/LoginForm";
+import SignupForm from "@/components/SignupForm";
 import Tabs from "@/components/Tabs";
 import { notFound } from "next/navigation";
 
@@ -19,7 +20,8 @@ export default function AuthPage({
             { id: "signup", title: "sign up" },
           ]}
         />
-        <LoginForm />
+        {searchParams.tab === "login" && <LoginForm />}
+        {searchParams.tab === "signup" && <SignupForm />}
       </div>
     </div>
   );
