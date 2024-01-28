@@ -1,6 +1,6 @@
 "use server";
 
-import { sql } from "@vercel/postgres";
+import { QueryResult, sql } from "@vercel/postgres";
 
 export const createUsersTable = async () => {
   await sql`CREATE TABLE IF NOT EXISTS users 
@@ -15,12 +15,14 @@ export const createUsersTable = async () => {
 };
 
 export const insertUser = async (email: string, hashedPass: string) => {
-  // console.log(
-  //   "insert sql",
-  //   `INSERT INTO users (email, password) VALUES
-  // (${email}, ${hashedPass});`
-  // );
-  const res = await sql`INSERT INTO users (email, password) VALUES 
+  await sql`INSERT INTO users (email, password) VALUES 
     (${email}, ${hashedPass});`;
-  console.log("res", res);
+};
+
+export const findUserByEmail = async (email: string) => {
+  const response: Promise<
+    QueryResult<any>
+  > = sql`SELECT * FROM users WHERE email=${email};`;
+  console.log("response", response);
+  return (await response).rows;
 };

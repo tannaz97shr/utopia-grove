@@ -25,7 +25,6 @@ export default function Tabs({ items }: TabsProps) {
   );
 
   useEffect(() => {
-    console.log("useeffect");
     router.push(pathname + "?" + createQueryString("tab", currentTabId));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTabId]);

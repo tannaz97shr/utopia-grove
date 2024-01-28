@@ -2,7 +2,7 @@
 
 import { IAuthResponse } from "@/models/general";
 import { hash } from "bcryptjs";
-import { createUsersTable, insertUser } from "./auth";
+import { createUsersTable, findUserByEmail, insertUser } from "./auth";
 
 const hashPassword = async (password: string) => {
   const hashedPassword = await hash(password, 12);
@@ -33,6 +33,13 @@ export const createUser = async (
   }
   try {
     await createUsersTable();
+    const userExists = await findUserByEmail(email);
+    if (userExists.length) {
+      return {
+        message: "User already exists",
+        status: 500,
+      };
+    }
     const pass = await hashPassword(password);
     await insertUser(email, pass);
     return {
