@@ -1,5 +1,6 @@
 import MainHeader from "@/components/MainHeader";
 import Notification from "@/components/UI/Notification";
+import NextAuthSessionProvider from "@/providers/SessionProvider";
 import { NotificationContextProvider } from "@/store/notification-context";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -20,13 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NotificationContextProvider>
-          <MainHeader />
-          <Notification />
-          <div className="flex flex-col mx-4 lg:mx-auto lg:w-[1200px]">
-            {children}
-          </div>
-        </NotificationContextProvider>
+        <NextAuthSessionProvider>
+          <NotificationContextProvider>
+            <MainHeader />
+            <Notification />
+            <div className="flex flex-col mx-4 lg:mx-auto lg:w-[1200px]">
+              {children}
+            </div>
+          </NotificationContextProvider>
+        </NextAuthSessionProvider>
       </body>
     </html>
   );

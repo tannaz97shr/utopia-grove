@@ -1,12 +1,20 @@
 "use server";
 
 import { IAuthResponse } from "@/models/general";
-import { hash } from "bcryptjs";
+import { compare, hash } from "bcryptjs";
 import { createUsersTable, findUserByEmail, insertUser } from "./auth";
 
 const hashPassword = async (password: string) => {
   const hashedPassword = await hash(password, 12);
   return hashedPassword;
+};
+
+export const verifyPassword = async (
+  password: string,
+  hashedPassword: string
+): Promise<boolean> => {
+  const isValid = await compare(password, hashedPassword);
+  return isValid;
 };
 
 export const createUser = async (
