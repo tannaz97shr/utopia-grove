@@ -20,7 +20,7 @@ export default function Input({
   required,
 }: InputProps) {
   return (
-    <label className="flex flex-col mt-4">
+    <label className="flex flex-col mt-4 w-fit">
       {label} :
       {type !== "textarea" ? (
         <input
