@@ -6,8 +6,8 @@ export const createEventsTable = async () => {
 };
 
 export const addSingleEvent = async (event: IRawEvent) => {
-  await sql`INSERT INTO events (title, startDate, endDate, description, address, link, image) 
-    VALUES (${event.title}, ${event.startDate}, ${event.endDate}, ${event.description}, ${event.address}, ${event.link}, ${event.image});`;
+  await sql`INSERT INTO events (title, startdate, enddate, description, address, link, image) 
+    VALUES (${event.title}, ${event.startdate}, ${event.enddate}, ${event.description}, ${event.address}, ${event.link}, ${event.image});`;
 };
 
 export const fetchEvents = async (page: number, perPage: number) => {
@@ -21,6 +21,6 @@ export const fetchEvents = async (page: number, perPage: number) => {
 export const fetchSingleEvent = async (id: string) => {
   const response: Promise<
     QueryResult<IEvent>
-  > = sql`SELECT * FROM events WHERE id=${id};`;
+  > = sql`SELECT * FROM Events WHERE id=${id};`;
   return (await response).rows;
 };

@@ -11,10 +11,10 @@ export const submitEvent = async (
 ): Promise<ISubmitEventResponse> => {
   const event = {
     title: formData.get("title") as string,
-    startDate: `${formData.get("startDate") as string}, ${
+    startdate: `${formData.get("startdate") as string}, ${
       formData.get("startTime") as string
     }`,
-    endDate: `${formData.get("endDate") as string}, ${
+    enddate: `${formData.get("enddate") as string}, ${
       formData.get("endTime") as string
     }`,
     description: formData.get("description") as string,
