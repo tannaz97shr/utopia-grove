@@ -4,8 +4,14 @@ import ImagePicker from "@/components/ImagePicker";
 import DateAndTimePicker from "@/components/UI/DateAndTimePicker";
 import Input from "@/components/UI/Input";
 import SubmitButton from "@/components/UI/SubmitButton";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
-export default function Create() {
+export default async function Create() {
+  const session = await getServerSession();
+  if (!session) {
+    redirect("/events");
+  }
   return (
     <>
       <h1 className="text-3xl mt-6 mx-auto">Submit Your Event</h1>
