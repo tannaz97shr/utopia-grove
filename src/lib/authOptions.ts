@@ -7,6 +7,7 @@ export const authOptions: NextAuthOptions = {
   // session: {
   jwt: {},
   // },
+  secret: process.env.AUTH_SECRET,
   providers: [
     CredentialsProvider({
       async authorize(credentials: any, _req) {

@@ -11,8 +11,8 @@ export default async function EventPage({
   params: { slug: string };
 }) {
   const [event] = await fetchSingleEvent(params.slug);
-  const start = new Date(event.startDate);
-  const end = new Date(event.endDate);
+  const start = new Date(event.startdate);
+  const end = new Date(event.enddate);
   if (!event) {
     notFound();
   }
@@ -30,7 +30,7 @@ export default async function EventPage({
           <div className="flex flex-col mt-6">
             <h2 className="font-semibold text-lg">When</h2>
             <div>
-              From: {start.toLocaleDateString()}, {start.toLocaleTimeString()}
+              From: {start.toDateString()}, {start.toLocaleTimeString()}
             </div>
             <div>
               To: {end.toLocaleDateString()}, {end.toLocaleTimeString()}

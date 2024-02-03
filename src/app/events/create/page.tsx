@@ -4,8 +4,14 @@ import ImagePicker from "@/components/ImagePicker";
 import DateAndTimePicker from "@/components/UI/DateAndTimePicker";
 import Input from "@/components/UI/Input";
 import SubmitButton from "@/components/UI/SubmitButton";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
-export default function Create() {
+export default async function Create() {
+  const session = await getServerSession();
+  if (!session) {
+    redirect("/events");
+  }
   return (
     <>
       <h1 className="text-3xl mt-6 mx-auto">Submit Your Event</h1>
@@ -14,13 +20,13 @@ export default function Create() {
           <FormExtraInfo info="Allow at least 48 hours for events to be approved by a team member. Check to see if your event is already posted on the events calendar before submitting this form. There is a chance a team member may have posted it. Do not use all caps.">
             <Input required name="title" type="text" label="Title" />
             <DateAndTimePicker
-              dateName="startDate"
+              dateName="startdate"
               timeName="startTime"
               label="Start Date"
               required
             />
             <DateAndTimePicker
-              dateName="endDate"
+              dateName="enddate"
               timeName="endTime"
               label="End Date"
               required
