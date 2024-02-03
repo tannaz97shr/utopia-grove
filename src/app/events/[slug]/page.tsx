@@ -13,7 +13,6 @@ export default async function EventPage({
   const [event] = await fetchSingleEvent(params.slug);
   const start = new Date(event.startdate);
   const end = new Date(event.enddate);
-  console.log("start date", event);
   if (!event) {
     notFound();
   }
