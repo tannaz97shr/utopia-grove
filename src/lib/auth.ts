@@ -23,6 +23,5 @@ export const findUserByEmail = async (email: string) => {
   const response: Promise<
     QueryResult<any>
   > = sql`SELECT * FROM users WHERE email=${email};`;
-  console.log("response", response);
   return (await response).rows;
 };

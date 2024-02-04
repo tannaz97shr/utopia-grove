@@ -26,8 +26,8 @@ export const submitEvent = async (
   );
   const event = {
     title: formData.get("title") as string,
-    start_date: start.getTime(),
-    end_date: end.getTime(),
+    start_date: start.toISOString(),
+    end_date: end.toISOString(),
     description: formData.get("description") as string,
     address: formData.get("address") as string,
     link: formData.get("link") as string,

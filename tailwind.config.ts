@@ -20,7 +20,7 @@ const config: Config = {
       "bg-secondary": "#88AB8E",
       "text-primary": "#404040",
       "text-secondary": "#a0a0a0",
-      "border-brown": "#DC8686",
+      "border-peach": "#DC8686",
       "custom-maroon": "#B06161",
       success: "#00cc66",
       error: "#ff8080",

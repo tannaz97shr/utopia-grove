@@ -20,8 +20,8 @@ export const addSingleEvent = async (event: IRawEvent, userId: string) => {
   await sql`INSERT INTO events
   (
               title,
-              startdate,
-              enddate,
+              start_date,
+              end_date,
               description,
               address,
               link,
