@@ -11,8 +11,8 @@ export default function SubmitButton({ children }: SubmitButtonProps) {
   return (
     <button
       className="mt-4 mx-auto px-4 py-2 
-      border border-border-brown bg-custom-orange text-bg-primary 
-      hover:text-custom-orange hover:bg-bg-primary"
+      border border-border-peach bg-custom-maroon text-bg-primary 
+      hover:text-custom-maroon hover:bg-bg-primary"
       type="submit"
     >
       {pending ? "Submitting..." : children}

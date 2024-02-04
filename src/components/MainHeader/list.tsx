@@ -49,7 +49,7 @@ export default function NavbarList() {
             <li
               key={item.id}
               className="mx-6 border-b-4 border-transparent font-semibold py-4
-        hover:cursor-pointer hover:text-custom-orange hover:border-b-4 hover:border-custom-orange"
+        hover:cursor-pointer hover:text-custom-maroon hover:border-b-4 hover:border-custom-maroon"
             >
               <Link className="capitalize" href={item.href}>
                 {item.title}
