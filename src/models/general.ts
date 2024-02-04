@@ -6,8 +6,8 @@ export interface IHeaderMenuItem {
 
 export interface IRawEvent {
   title: string;
-  startdate: string;
-  enddate: string;
+  start_date: number;
+  end_date: number;
   description: string;
   address: string;
   link: string;

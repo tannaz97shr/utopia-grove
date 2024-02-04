@@ -7,8 +7,8 @@ export const createEventsTable = async () => {
      id          SERIAL PRIMARY KEY,
      title       CHAR(100) NOT NULL,
      description CHAR(512),
-     startdate   CHAR(100),
-     enddate     CHAR(100),
+     start_date  TIMESTAMP,
+     end_date    TIMESTAMP,
      address     CHAR(100),
      link        CHAR(200),
      image       CHAR(200),
@@ -31,8 +31,8 @@ export const addSingleEvent = async (event: IRawEvent, userId: string) => {
   VALUES
   (
               ${event.title},
-              ${event.startdate},
-              ${event.enddate},
+              ${event.start_date},
+              ${event.end_date},
               ${event.description},
               ${event.address},
               ${event.link},
@@ -42,12 +42,14 @@ export const addSingleEvent = async (event: IRawEvent, userId: string) => {
 };
 
 export const fetchEvents = async (page: number, perPage: number) => {
-  const response: Promise<
-    QueryResult<IEvent>
-  > = sql`SELECT * FROM events ORDER BY id OFFSET ${
-    (page - 1) * perPage
-  } ROWS FETCH NEXT ${perPage} ROWS ONLY;`;
-  console.log((await response).rows);
+  const now = new Date();
+  const response: Promise<QueryResult<IEvent>> = sql`SELECT *
+  FROM   events
+  WHERE  start_date > ${now.toISOString()}
+  ORDER  BY start_date
+  LIMIT 
+    ${perPage} OFFSET ${(page - 1) * perPage};`;
+
   return (await response).rows;
 };
 export const fetchSingleEvent = async (id: string) => {
