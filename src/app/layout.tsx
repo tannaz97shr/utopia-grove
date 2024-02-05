@@ -25,7 +25,7 @@ export default function RootLayout({
           <NotificationContextProvider>
             <MainHeader />
             <Notification />
-            <div className="flex flex-col mx-4 lg:mx-auto lg:w-[1200px]">
+            <div className="flex flex-col mx-4 lg:mx-auto xl:w-[1200px]">
               {children}
             </div>
           </NotificationContextProvider>

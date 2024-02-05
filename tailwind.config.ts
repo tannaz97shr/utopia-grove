@@ -22,6 +22,7 @@ const config: Config = {
       "text-secondary": "#a0a0a0",
       "border-peach": "#DC8686",
       "custom-maroon": "#B06161",
+      blur: "rgba(0, 0, 0, 0.25)",
       success: "#00cc66",
       error: "#ff8080",
     },

@@ -42,3 +42,8 @@ export interface ITabItem {
   id: "login" | "signup";
   title: string;
 }
+
+export interface ICarouselImage {
+  src: string;
+  alt: string;
+}
