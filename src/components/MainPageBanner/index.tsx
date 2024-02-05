@@ -5,6 +5,7 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import { useState } from "react";
+import BannerButtons from "./Buttons";
 import Arrow from "./assets/CarouselArrow";
 
 export default function MainBanner() {
@@ -72,13 +73,12 @@ export default function MainBanner() {
   ];
   return (
     <div className="w-[100vw] aspect-video xl:aspect-[5/2] relative">
-      {/* <Image alt="Grove" src="/assets/grove.jpg" fill className="absolute" />
-      <div className="absolute z-10 top-10 lg:top-20 left-10 w-96 lg:mt-24">
+      <div className="absolute z-10 top-10 lg:top-20 left-10 lg:left-24 w-96 lg:mt-24">
         <div className="text-3xl xl:text-5xl font-semibold text-bg-primary">
-          The Utopia Grove Surf Club
+          The Dubai Events Surf Club
         </div>
         <BannerButtons />
-      </div> */}
+      </div>
       <div
         ref={sliderRef}
         className="keen-slider bg-bg-secondary h-full w-full"
