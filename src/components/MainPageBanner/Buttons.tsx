@@ -1,18 +1,12 @@
 "use client";
 
 import Button from "../UI/Button";
-import { useSession } from "next-auth/react";
 
 export default function BannerButtons() {
   return (
     <div className="mt-4 flex">
-      <Button
-        variant="primary"
-        onClick={() => {
-          console.log("contact us clicked");
-        }}
-      >
-        Contact Us
+      <Button variant="primary" href="/#latestEvents">
+        Latest Events
       </Button>
       <Button
         className="ml-3"
