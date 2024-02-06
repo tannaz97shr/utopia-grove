@@ -1,11 +1,12 @@
+import { getEvents } from "@/api/events";
 import EventsSection from "@/components/EventsSection";
 import Button from "@/components/UI/Button";
-import { fetchEvents } from "@/lib/events";
 import { IEvent } from "@/models/general";
 import { getServerSession } from "next-auth";
 
 export default async function Events() {
-  const eventsResponse: IEvent[] = await fetchEvents(1, 20);
+  //todo move to get events function
+  const eventsResponse: IEvent[] = await getEvents(1, 20);
   const session = await getServerSession();
   return (
     <>

@@ -1,8 +1,8 @@
+import { getSingleEvent } from "@/api/events";
 import TextCollapse from "@/components/TextCollapse";
 import Button from "@/components/UI/Button";
-import { fetchSingleEvent } from "@/lib/events";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { CiLocationOn } from "react-icons/ci";
 
 export default async function EventPage({
@@ -10,7 +10,10 @@ export default async function EventPage({
 }: {
   params: { slug: string };
 }) {
-  const [event] = await fetchSingleEvent(params.slug);
+  const event = await getSingleEvent(params.slug);
+  if (!event) {
+    redirect("/events");
+  }
   const start = new Date(event.start_date);
   const end = new Date(event.end_date);
   if (!event) {
