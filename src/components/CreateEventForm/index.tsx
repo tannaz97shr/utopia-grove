@@ -28,10 +28,7 @@ export default function CreateEventForm({ children }: CreateEventFormProps) {
     }
   }, [state]);
   return (
-    <form
-      className="flex flex-col border border-border-peach p-4"
-      action={formAction}
-    >
+    <form className="flex flex-col border border-peach p-4" action={formAction}>
       {children}
       {state.message && <p>{state.message}</p>}
     </form>

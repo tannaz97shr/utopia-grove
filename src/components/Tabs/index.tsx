@@ -43,16 +43,16 @@ export default function Tabs({ items }: TabsProps) {
   return (
     <ul
       className="flex flex-wrap text-sm font-medium text-center mt-6 border-b justify-center 
-text-text-secondary border-border-peach"
+text-text-secondary border-peach"
     >
       {items.map((item: ITabItem) => (
         <li
           key={item.id}
           onClick={() => onTabChange(item.id)}
-          className={`me-2 inline-block p-4 min-w-[7rem] hover:cursor-pointer rounded-t-lg bg-bg-secondary 
+          className={`me-2 inline-block p-4 min-w-[7rem] hover:cursor-pointer rounded-t-lg bg-teal 
         ${
           item.id === currentTabId
-            ? "text-custom-maroon font-semibold border-b-2 border-custom-maroon"
+            ? "text-maroon font-semibold border-b-2 border-maroon"
             : "text-text-secondary "
         }
         `}

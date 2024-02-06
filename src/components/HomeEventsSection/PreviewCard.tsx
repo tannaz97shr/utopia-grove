@@ -9,7 +9,7 @@ interface PreviewCardProps {
 export default function PreviewCard({ title, image, link }: PreviewCardProps) {
   return (
     <div className="flex flex-col relative">
-      <div className="w-full aspect-square bg-bg-secondary relative">
+      <div className="w-full aspect-square bg-teal relative">
         <Image src={image} alt={title} fill />
       </div>
       <div className="whitespace-nowrap w-full truncate text-xl font-semibold mt-4 font-sans px-2">

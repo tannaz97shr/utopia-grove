@@ -19,8 +19,8 @@ export default function Button({
   submit,
   href,
 }: ButtonProps) {
-  const primaryClassName = `px-4 py-2 rounded-md h-fit whitespace-nowrap border border-border-peach bg-custom-maroon text-bg-primary hover:text-custom-maroon hover:bg-bg-primary`;
-  const secondaryClassName = `px-4 py-2 rounded-md h-fit whitespace-nowrap border border-border-peach text-custom-maroon font-semibold bg-bg-primary hover:text-bg-primary hover:bg-custom-maroon`;
+  const primaryClassName = `px-4 py-2 rounded-md h-fit whitespace-nowrap border border-peach bg-maroon text-beige hover:text-maroon hover:bg-beige`;
+  const secondaryClassName = `px-4 py-2 rounded-md h-fit whitespace-nowrap border border-peach text-maroon font-semibold bg-beige hover:text-beige hover:bg-maroon`;
   return (
     <>
       {submit ? (

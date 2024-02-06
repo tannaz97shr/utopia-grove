@@ -10,7 +10,7 @@ export default function Logo() {
         height={50}
         alt="Picture of the author"
       />
-      <span className="ml-4">Utopia Grove</span>
+      <span className="ml-4">Dubai Events</span>
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function Footer() {
     <div
       className="flex flex-col md:flex-row justify-between items-center
     w-full mt-5 p-4
-  bg-primary-teal lg:bg-gradient-to-r from-bg-secondary to-border-peach"
+  beige-teal lg:bg-gradient-to-r from-teal to-peach"
     >
       <div className="mb-4 md:mb-0">
         Email:{" "}

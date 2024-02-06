@@ -24,7 +24,7 @@ export default function Input({
       {label} :
       {type !== "textarea" ? (
         <input
-          className={`w-72 rounded bg-bg-primary mt-2 p-1 focus-visible:outline-0 ${className}`}
+          className={`w-72 rounded bg-beige mt-2 p-1 focus-visible:outline-0 ${className}`}
           name={name}
           onChange={onChange && onChange}
           value={value && value}
@@ -34,7 +34,7 @@ export default function Input({
         />
       ) : (
         <textarea
-          className={`w-72 rounded bg-bg-primary mt-2 p-1 focus-visible:outline-0 ${className}`}
+          className={`w-72 rounded bg-beige mt-2 p-1 focus-visible:outline-0 ${className}`}
           name={name}
           value={value && value}
           required={required}

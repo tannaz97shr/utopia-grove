@@ -11,7 +11,7 @@ export default function EventsCard({ id, title, image }: EventsCardProps) {
   return (
     <Link
       href={`/events/${id}`}
-      className="flex flex-col px-2 py-4 w-full mx-auto max-w-[400px] custom-shadow hover:bg-bg-secondary"
+      className="flex flex-col px-2 py-4 w-full mx-auto max-w-[400px] custom-shadow hover:bg-teal"
     >
       <div className="relative w-full mx-auto aspect-video shadow-none">
         {image && (
