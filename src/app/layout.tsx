@@ -23,12 +23,14 @@ export default function RootLayout({
       <body className={inter.className}>
         <NextAuthSessionProvider>
           <NotificationContextProvider>
-            <MainHeader />
-            <Notification />
-            <div className="flex flex-col mx-4 lg:mx-auto xl:w-[1200px]">
-              {children}
+            <div className="min-h-[100vh] relative pb-20">
+              <MainHeader />
+              <Notification />
+              <div className="flex flex-col mx-4 lg:mx-auto xl:w-[1200px] h-full">
+                {children}
+              </div>
+              <Footer />
             </div>
-            <Footer />
           </NotificationContextProvider>
         </NextAuthSessionProvider>
       </body>

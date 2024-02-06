@@ -1,9 +1,9 @@
-import { fetchEvents } from "@/lib/events";
+import { getEvents } from "@/api/events";
 import { IEvent } from "@/models/general";
 import PreviewCard from "./PreviewCard";
 
 export default async function HomeEventsSection() {
-  const latestEvents = await fetchEvents(1, 4);
+  const latestEvents = await getEvents(1, 4);
   if (!latestEvents.length) return;
   return (
     <div className="mt-8 w-full">
