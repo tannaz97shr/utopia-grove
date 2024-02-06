@@ -19,11 +19,11 @@ export default function HomeAboutSection() {
       </p>
       <h3 className=" font-sans font-semibold text-xl mt-6">My Mission</h3>
       <p className="mt-6 font-sans text-lg">
-        At Dubai Events, my mission is to push the boundaries of what's possible
-        in front-end development while creating engaging and user-friendly
-        interfaces. While this website may be a practice project, my commitment
-        to excellence and innovation shines through in every aspect of its
-        design and functionality.
+        At Dubai Events, my mission is to push the boundaries of what&apos;s
+        possible in front-end development while creating engaging and
+        user-friendly interfaces. While this website may be a practice project,
+        my commitment to excellence and innovation shines through in every
+        aspect of its design and functionality.
       </p>
       <h3 className=" font-sans font-semibold text-xl mt-6">
         What Sets Me Apart
@@ -42,7 +42,7 @@ export default function HomeAboutSection() {
       <p className="mt-6 font-sans text-lg">
         Interested in learning more about my skills and experience? Explore
         Dubai Events today and see firsthand what I can bring to your next
-        front-end development project. Whether you're an employer seeking a
+        front-end development project. Whether you&apos;re an employer seeking a
         talented developer or a fellow enthusiast eager to collaborate, I invite
         you to join me on this journey of growth and innovation.
       </p>
