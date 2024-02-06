@@ -84,7 +84,7 @@ export default function MainBanner() {
         className="keen-slider bg-bg-secondary h-full w-full"
       >
         {carouselImages.map((img: ICarouselImage) => (
-          <div className="keen-slider__slide">
+          <div key={img.alt} className="keen-slider__slide">
             <Image src={img.src} alt={img.alt} fill />
           </div>
         ))}
