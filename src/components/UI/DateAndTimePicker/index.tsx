@@ -16,13 +16,13 @@ export default function DateAndTimePicker({
       {label} :
       <div className="w-72 flex gap-2 mt-2">
         <input
-          className="w-36 rounded bg-bg-primary mt-2 p-1 focus-visible:outline-0"
+          className="w-36 rounded bg-beige mt-2 p-1 focus-visible:outline-0"
           name={dateName}
           type="date"
           required={required}
         />
         <input
-          className="w-36 rounded bg-bg-primary mt-2 p-1 focus-visible:outline-0"
+          className="w-36 rounded bg-beige mt-2 p-1 focus-visible:outline-0"
           name={timeName}
           type="time"
           required={required}

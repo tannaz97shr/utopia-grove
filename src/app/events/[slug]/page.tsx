@@ -18,7 +18,7 @@ export default async function EventPage({
   }
   return (
     <>
-      <h1 className="mt-6 text-xl md:text-3xl text-custom-maroon font-semibold">
+      <h1 className="mt-6 text-xl md:text-3xl text-maroon font-semibold">
         {event.title}
       </h1>
       <div className="flex flex-col md:flex-row mt-6">

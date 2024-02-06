@@ -8,14 +8,8 @@ export default function BannerButtons() {
       <Button variant="primary" href="/#latestEvents">
         Latest Events
       </Button>
-      <Button
-        className="ml-3"
-        variant="secondary"
-        onClick={() => {
-          console.log("Visit our recommended us clicked");
-        }}
-      >
-        Recommendeds
+      <Button className="ml-3" variant="secondary" href="/#about">
+        About
       </Button>
     </div>
   );

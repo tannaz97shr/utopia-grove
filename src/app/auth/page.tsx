@@ -27,8 +27,8 @@ export default function AuthPage({
     return <div>Loading...</div>;
   }
   return (
-    <div className="w-full lg:w-3/4 mx-auto bg-bg-secondary p-2 mt-6">
-      <div className="flex flex-col border border-border-peach p-4">
+    <div className="w-full lg:w-3/4 mx-auto bg-teal p-2 mt-6">
+      <div className="flex flex-col border border-peach p-4">
         <Tabs
           items={[
             { id: "login", title: "log in" },

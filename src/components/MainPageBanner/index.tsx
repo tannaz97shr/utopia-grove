@@ -74,15 +74,12 @@ export default function MainBanner() {
   return (
     <div className="w-[100vw] aspect-video xl:aspect-[5/2] relative">
       <div className="absolute z-10 top-10 lg:top-20 left-10 lg:left-24 w-96 lg:mt-24">
-        <div className="text-3xl xl:text-5xl font-semibold text-bg-primary">
+        <div className="text-3xl xl:text-5xl font-semibold text-peach">
           The Dubai Events Surf Club
         </div>
         <BannerButtons />
       </div>
-      <div
-        ref={sliderRef}
-        className="keen-slider bg-bg-secondary h-full w-full"
-      >
+      <div ref={sliderRef} className="keen-slider bg-teal h-full w-full">
         {carouselImages.map((img: ICarouselImage) => (
           <div key={img.alt} className="keen-slider__slide">
             <Image src={img.src} alt={img.alt} fill />
