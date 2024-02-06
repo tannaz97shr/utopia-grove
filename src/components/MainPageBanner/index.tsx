@@ -74,7 +74,7 @@ export default function MainBanner() {
   return (
     <div className="w-[100vw] aspect-video xl:aspect-[5/2] relative">
       <div className="absolute z-10 top-10 lg:top-20 left-10 lg:left-24 w-96 lg:mt-24">
-        <div className="text-3xl xl:text-5xl font-semibold text-bg-primary">
+        <div className="text-3xl xl:text-5xl font-semibold text-border-peach">
           The Dubai Events Surf Club
         </div>
         <BannerButtons />

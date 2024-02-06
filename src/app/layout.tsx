@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import MainHeader from "@/components/MainHeader";
 import Notification from "@/components/UI/Notification";
 import NextAuthSessionProvider from "@/providers/SessionProvider";
@@ -28,6 +29,7 @@ export default function RootLayout({
             <div className="flex flex-col mx-4 lg:mx-auto xl:w-[1200px]">
               {children}
             </div>
+            <Footer />
           </NotificationContextProvider>
         </NextAuthSessionProvider>
       </body>
