@@ -44,6 +44,7 @@ export default function ImagePicker({ label, name }: ImagePickerProps) {
           )}
         </div>
         <input
+          required
           type="file"
           id={name}
           name={name}

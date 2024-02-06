@@ -8,6 +8,7 @@ export default async function Events() {
   //todo move to get events function
   const eventsResponse: IEvent[] = await getEvents(1, 20);
   const session = await getServerSession();
+  console.log(session, "session");
   return (
     <>
       {session && (

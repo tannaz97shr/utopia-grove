@@ -53,7 +53,7 @@ text-text-secondary border-peach"
         ${
           item.id === currentTabId
             ? "text-maroon font-semibold border-b-2 border-maroon"
-            : "text-text-secondary "
+            : "text-peach "
         }
         `}
         >
