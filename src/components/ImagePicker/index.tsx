@@ -33,7 +33,7 @@ export default function ImagePicker({ label, name }: ImagePickerProps) {
     <div>
       <label htmlFor={name}>{label}</label>
       <div className="flex mt-2">
-        <div className="border-2 border-border-brown w-32 h-32 relative">
+        <div className="border-2 border-border-peach w-32 h-32 relative">
           {!pickedImage && <p>No image picked yet.</p>}
           {pickedImage && (
             <Image
@@ -54,7 +54,7 @@ export default function ImagePicker({ label, name }: ImagePickerProps) {
         />
         <button
           onClick={handlePickClick}
-          className="h-fit ml-3 bg-transparent border mt-2 text-border-brown border-border-brown px-2 py-1"
+          className="h-fit ml-3 bg-transparent border mt-2 text-border-brown border-border-peach px-2 py-1"
           type="button"
         >
           Pick an Image

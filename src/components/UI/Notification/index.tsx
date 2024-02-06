@@ -10,7 +10,7 @@ function Notification() {
       {notification ? (
         <div
           className={`absolute flex text-center justify-center p-4 border bottom-4 mx-auto w-2/5 left-0 right-0 
-        border-border-brown ${
+        border-border-peach ${
           notification.status === "success"
             ? "bg-success"
             : notification.status === "error"

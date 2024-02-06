@@ -4,7 +4,7 @@ import NavbarList from "./list";
 
 export default function MainHeader() {
   return (
-    <div className="relative flex items-center w-full px-4 pt-6 border-b border-border-brown text-text-primary">
+    <div className="relative flex items-center w-full px-4 pt-6 border-b border-border-peach text-text-primary">
       <Link href="/">
         <Logo />
       </Link>

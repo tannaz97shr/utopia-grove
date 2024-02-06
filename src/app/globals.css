@@ -31,7 +31,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  background-color: #fff8e1;
+  background-color: #f0dbaf;
 }
 
 body * {
@@ -48,4 +48,23 @@ body * {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+.btn-double:before,
+.btn-double:after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 134px;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5px;
+  background-color: #b06161;
+}
+.btn-double:after {
+  bottom: 0;
+}
+.btn-double:hover:after {
+  height: 5px;
 }

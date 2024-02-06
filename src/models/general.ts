@@ -6,8 +6,8 @@ export interface IHeaderMenuItem {
 
 export interface IRawEvent {
   title: string;
-  startdate: string;
-  enddate: string;
+  start_date: string;
+  end_date: string;
   description: string;
   address: string;
   link: string;
@@ -41,4 +41,9 @@ export interface INotificationContext {
 export interface ITabItem {
   id: "login" | "signup";
   title: string;
+}
+
+export interface ICarouselImage {
+  src: string;
+  alt: string;
 }

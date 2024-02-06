@@ -29,7 +29,7 @@ export default function CreateEventForm({ children }: CreateEventFormProps) {
   }, [state]);
   return (
     <form
-      className="flex flex-col border border-border-brown p-4"
+      className="flex flex-col border border-border-peach p-4"
       action={formAction}
     >
       {children}

@@ -16,14 +16,18 @@ export const submitEvent = async (
   if (!session) {
     redirect("/events");
   }
+  const start = new Date(
+    `${formData.get("startDate") as string}, ${
+      formData.get("startTime") as string
+    }`
+  );
+  const end = new Date(
+    `${formData.get("endDate") as string}, ${formData.get("endTime") as string}`
+  );
   const event = {
     title: formData.get("title") as string,
-    startdate: `${formData.get("startdate") as string}, ${
-      formData.get("startTime") as string
-    }`,
-    enddate: `${formData.get("enddate") as string}, ${
-      formData.get("endTime") as string
-    }`,
+    start_date: start.toISOString(),
+    end_date: end.toISOString(),
     description: formData.get("description") as string,
     address: formData.get("address") as string,
     link: formData.get("link") as string,

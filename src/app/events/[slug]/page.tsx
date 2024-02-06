@@ -11,14 +11,14 @@ export default async function EventPage({
   params: { slug: string };
 }) {
   const [event] = await fetchSingleEvent(params.slug);
-  const start = new Date(event.startdate);
-  const end = new Date(event.enddate);
+  const start = new Date(event.start_date);
+  const end = new Date(event.end_date);
   if (!event) {
     notFound();
   }
   return (
     <>
-      <h1 className="mt-6 text-xl md:text-3xl text-custom-orange font-semibold">
+      <h1 className="mt-6 text-xl md:text-3xl text-custom-maroon font-semibold">
         {event.title}
       </h1>
       <div className="flex flex-col md:flex-row mt-6">
