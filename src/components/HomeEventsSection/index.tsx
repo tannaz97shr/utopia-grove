@@ -14,6 +14,7 @@ export default async function HomeEventsSection() {
       <div className="grid gap-4 grid-cols-2 md:grid-cols-4 pt-4">
         {latestEvents.map((event: IEvent) => (
           <PreviewCard
+            key={event.id}
             image={event.image}
             title={event.title}
             link={event.link}
